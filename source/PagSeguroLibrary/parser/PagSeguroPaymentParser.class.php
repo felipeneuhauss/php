@@ -155,6 +155,51 @@ class PagSeguroPaymentParser extends PagSeguroServiceParser
             }
         }
 
+        // pre approval
+        if ($payment->getPreApproval() != null) {
+
+            // pre approval
+            if ($payment->getPreApproval()->getCharge() != null) {
+                $data['preApprovalCharge'] = $payment->getPreApproval()->getCharge();
+            }
+            if ($payment->getPreApproval()->getName() != null) {
+                $data['preApprovalName'] = $payment->getPreApproval()->getName();
+            }
+            if ($payment->getPreApproval()->getDetails() != null) {
+                $data['preApprovalDetails'] = $payment->getPreApproval()->getDetails();
+            }
+            if ($payment->getPreApproval()->getAmountPerPayment() != null) {
+                $data['preApprovalAmountPerPayment'] = $payment->getPreApproval()->getAmountPerPayment();
+            }
+            if ($payment->getPreApproval()->getPeriod() != null) {
+                $data['preApprovalPeriod'] = $payment->getPreApproval()->getPeriod();
+            }
+            if ($payment->getPreApproval()->getDayOfWeek() != null) {
+                $data['preApprovalDayOfWeek'] = $payment->getPreApproval()->getDayOfWeek();
+            }
+            if ($payment->getPreApproval()->getDayOfMonth() != null) {
+                $data['preApprovalDayOfMonth'] = $payment->getPreApproval()->getDayOfMonth();
+            }
+            if ($payment->getPreApproval()->getDayOfYear() != null) {
+                $data['preApprovalDayOfYear'] = $payment->getPreApproval()->getDayOfYear();
+            }
+            if ($payment->getPreApproval()->getInitialDate() != null) {
+                $data['preApprovalInitialDate'] = $payment->getPreApproval()->getInitialDate();
+            }
+            if ($payment->getPreApproval()->getFinalDate() != null) {
+                $data['preApprovalFinalDate'] = $payment->getPreApproval()->getFinalDate();
+            }
+            if ($payment->getPreApproval()->getMaxAmountPerPeriod() != null) {
+                $data['preApprovalMaxAmountPerPeriod'] = $payment->getPreApproval()->getMaxAmountPerPeriod();
+            }
+            if ($payment->getPreApproval()->getMaxTotalAmount() != null) {
+                $data['preApprovalMaxTotalAmount'] = $payment->getPreApproval()->getMaxTotalAmount();
+            }
+            if ($payment->getPreApproval()->getReviewURL() != null) {
+                $data['reviewURL'] = $payment->getPreApproval()->getReviewURL();
+            }
+        }
+
         // maxAge
         if ($payment->getMaxAge() != null) {
             $data['maxAge'] = $payment->getMaxAge();

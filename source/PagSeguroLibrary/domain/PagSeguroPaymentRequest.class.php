@@ -43,7 +43,12 @@ class PagSeguroPaymentRequest
      */
     private $items;
 
-    /***
+    /**
+     * PreApproval
+     */
+    private $preApproval;
+
+    /**
      * Uri to where the PagSeguro payment page should redirect the user after the payment information is processed.
      * Typically this is a confirmation page on your web site.
      * @var String
@@ -669,5 +674,72 @@ class PagSeguroPaymentRequest
         }
 
         return $urlReturn;
+    }
+
+    /**
+     * @return PagSeguroPreApproval
+     *
+     *
+     */
+    public function getPreApproval()
+    {
+        return $this->preApproval;
+    }
+
+
+    /**
+     * @param null $charge
+     * @param null $name
+     * @param null $details
+     * @param null $amountPerPayment
+     * @param null $period
+     * @param null $dayOfWeek
+     * @param null $dayOfMonth
+     * @param null $dayOfYear
+     * @param null $initialDate
+     * @param null $finalDate
+     * @param null $maxAmountPerPeriod
+     * @param null $maxTotalAmount
+     * @param null $reviewURL
+     */
+    public function setPreApproval(
+        $charge = null,
+        $name = null,
+        $details = null,
+        $amountPerPayment = null,
+        $period = null,
+        $dayOfWeek = null,
+        $dayOfMonth = null,
+        $dayOfYear = null,
+        $initialDate = null,
+        $finalDate = null,
+        $maxAmountPerPeriod = null,
+        $maxTotalAmount = null,
+        $reviewURL = null
+    ) {
+        $param = $charge;
+        if (is_array($param)) {
+            $this->preApproval = new PagSeguroPreApproval($param);
+        } elseif ($param instanceof PagSeguroPreApproval) {
+            $this->preApproval = $param;
+        } else {
+            $preApproval = new PagSeguroPreApproval();
+
+            $preApproval->setCharge($charge);
+            $preApproval->setName($name);
+            $preApproval->setDetails($details);
+            $preApproval->setAmountPerPayment($amountPerPayment);
+            $preApproval->setPeriod($period);
+            $preApproval->setDayOfWeek($dayOfWeek);
+            $preApproval->setDayOfMonth($dayOfMonth);
+            $preApproval->setDayOfYear($dayOfYear);
+            $preApproval->setInitialDate($initialDate);
+            $preApproval->setFinalDate($finalDate);
+            $preApproval->setMaxAmountPerPeriod($maxAmountPerPeriod);
+            $preApproval->setMaxTotalAmount($maxTotalAmount);
+            $preApproval->setReviewURL($reviewURL);
+
+            $this->preApproval = $preApproval;
+        }
     }
 }
