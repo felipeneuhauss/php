@@ -1,6 +1,5 @@
 <?php
 
-
 require_once "../PagSeguroLibrary/PagSeguroLibrary.php";
 
 date_default_timezone_set('America/Sao_Paulo');
@@ -91,12 +90,12 @@ class CreatePreApprovalRequest
 
         // Sets your customer information.
         $paymentRequest->setSender(
-            'Daphynne Crispim',
-            'miss.dap@gmail.com',
-            '61',
-            '82006226',
+            'Fulano',
+            'email@gmail.com',
+            '00',
+            '99898988',
             'CPF',
-            '019.997.181-19'
+            '000.000.000-00'
         );
 
         // Sets the url used by PagSeguro for redirect user after ends checkout process

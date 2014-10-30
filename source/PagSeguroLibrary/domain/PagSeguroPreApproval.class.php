@@ -1,5 +1,4 @@
 <?php
-
 /**
  @author: felipe.neuhauss@gmail.com
  @version: 1.0
@@ -58,7 +57,7 @@ class PagSeguroPreApproval
     private $dayOfMonth;
 
     /*
-     * Utilize esse campo caso no parâmetro preApprovalPeriod esteja configurado como YEARLY.
+     * Utilize esse campo caso no parametro preApprovalPeriod esteja configurado como YEARLY.
      * exemplo: MM-dd
      */
     private $dayOfYear;
@@ -70,18 +69,18 @@ class PagSeguroPreApproval
     private $initialDate;
 
     /*
-     * Essa data obviamente deverá não ser inferior a data atual, e não poderá ser superior até dois anos da data atual
+     * Essa data obviamente devera não ser inferior a data atual, e não podera ser superior até dois anos da data atual
      */
     private $finalDate;
 
     /*
-     * Nesse parâmetro deve ser informado qual valor total máximo que o PagSeguro irá cobrar dentro do período.
+     * Nesse parametro deve ser informado qual valor total maximo que o PagSeguro ira cobrar dentro do período.
      * Entre 1.00 e 2000.00.
      */
     private $maxAmountPerPeriod;
 
     /*
-     * Nesse parâmetro deve ser informado qual valor total máximo que o PagSeguro irá cobrar enquanto a assinatura for válida.
+     * Nesse parametro deve ser informado qual valor total maximo que o PagSeguro ira cobrar enquanto a assinatura for valida.
      * Entre 1.00 e 35000.00.
      */
     private $maxTotalAmount;
