@@ -58,7 +58,7 @@ Caso tenha dúvidas ou precise de suporte, acesse nosso [fórum].
 Changelog
 ---------
 2.2.5
- - Adicionando a classe que permite criar recorrencia (assinatura)
+ - Adicionada a classe que permite criar recorrencia (assinatura)
  - Adicionado em examples/ o arquivo createPaymentPreApprovalRequest.php demonstrando como se criar uma assinatura
 
 2.2.4
